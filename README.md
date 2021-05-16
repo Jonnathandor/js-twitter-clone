@@ -39,3 +39,9 @@ User Stories
     * Uses Javascript
     * Uses CSS 
     * Uses HTML
+
+## Twitter Docs: 
+* Bearer Token: https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens 
+* 30 Days tweets: https://developer.twitter.com/en/docs/twitter-api/premium/search-api/quick-start/premium-30-day#tab2 
+* standard search: https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/api-reference/get-search-tweets 
+
