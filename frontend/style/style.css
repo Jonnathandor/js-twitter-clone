@@ -26,7 +26,6 @@ body, html {
     margin-top: 60px;
     color: white;
     font-size: 2em;
-
 }
 
 .profile img {
@@ -42,13 +41,34 @@ that is left after navigation will be splitted evenly between those two divs */
     flex-direction: column;
     /* flex-grow: 1; says: "Let me grow as much as I can" */
     flex-grow: 1;
-    background-color: coral;
 }
 
-.tweets-search {
+.tweets-search-container {
     height: 70px;
     margin: 20px;
-    background-color: red;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+#user-search-input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#user-search-input:focus {
+    outline: none;
+}
+
+.fa-search {
+    color: white;
+    font-size: 30px;
 }
 
 .tweets-list {
