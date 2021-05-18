@@ -1,0 +1,79 @@
+body, html {
+    margin: 0;
+    /* max-width: 900px;
+    background-color: darkgreen; */
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: #0F0F11;
+}
+
+.navigation-container {
+    width: 20%;
+    max-width: 90px;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo, .home-link, .profile-container {
+    width: 40px;
+    height: 40px;
+    margin-top: 60px;
+    color: white;
+    font-size: 2em;
+
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* two divs are using flex-grow: 1, this means that the space
+that is left after navigation will be splitted evenly between those two divs */
+.main {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; says: "Let me grow as much as I can" */
+    flex-grow: 1;
+    background-color: coral;
+}
+
+.tweets-search {
+    height: 70px;
+    margin: 20px;
+    background-color: red;
+}
+
+.tweets-list {
+    height: 600px;
+    margin: 20px;
+    background-color: blue; 
+}
+
+.tweet-container {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    background-color: white;
+    margin: 10px;
+}
+
+.tweets-sidebar-container {
+    background-color: darkturquoise;
+    /* flex-grow: 1; says: "Let me grow as much as I can" */
+    flex-grow: 1;
+}
+
+.tweets-sidebar {
+    background-color: white;
+    width: 200px;
+    height: 500px;
+    margin: 20px;
+}
