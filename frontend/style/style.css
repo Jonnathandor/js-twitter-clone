@@ -40,7 +40,7 @@ that is left after navigation will be splitted evenly between those two divs */
     display: flex;
     flex-direction: column;
     /* flex-grow: 1; says: "Let me grow as much as I can" */
-    flex-grow: 1;
+    flex: 1;
 }
 
 .tweets-search-container {
@@ -74,21 +74,69 @@ that is left after navigation will be splitted evenly between those two divs */
 .tweets-list {
     height: 600px;
     margin: 20px;
-    background-color: blue; 
 }
 
 .tweet-container {
     display: flex;
     flex-direction: column;
-    height: 90px;
-    background-color: white;
     margin: 10px;
+    border: 1px solid #1c1c1c;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tweet-user-info {
+    height: 90px;
+    display: flex;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.tweet-user-profile {
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+}
+
+.tweet-user-name-container {
+    color: white;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.tweet-user-username {
+    font-size: 10px;
+}
+
+.tweet-images-container {
+    margin: 20px;
+    height: 200px;
+    border: 1px solid #1c1c1c;
+    border-radius: 20px;
+}
+
+.tweet-text-container {
+    margin: 20px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.tweet-date-container {
+    margin: 20px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.74);
 }
 
 .tweets-sidebar-container {
     background-color: darkturquoise;
     /* flex-grow: 1; says: "Let me grow as much as I can" */
-    flex-grow: 1;
+    flex: 1;
 }
 
 .tweets-sidebar {
