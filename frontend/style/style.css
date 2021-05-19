@@ -134,14 +134,48 @@ that is left after navigation will be splitted evenly between those two divs */
 }
 
 .tweets-sidebar-container {
-    background-color: darkturquoise;
     /* flex-grow: 1; says: "Let me grow as much as I can" */
     flex: 1;
+    display: flex;
 }
 
 .tweets-sidebar {
     background-color: white;
-    width: 200px;
+    width: 300px;
     height: 500px;
     margin: 20px;
+    margin-top: 70px;
+    border: 1px solid #979797;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.tweets-trending {
+    height: 300px;
+    background-color: #f2f2f2;
+    margin: 10px;
+    border-radius: 40px;
+    padding-top: 20px;
+}
+
+.tweets-trending h5 {
+    font-size: 15px;
+    color: #848586;
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.tweets-trending ul  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tweets-trending ul li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    color: #848586;
+    border-top: 1px solid #d8d8d8;
+    cursor: pointer;
 }
