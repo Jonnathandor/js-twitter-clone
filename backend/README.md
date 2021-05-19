@@ -4,6 +4,11 @@
 * npm
 * nodemon (optional)
 
+## Dependencies
+
+* Express 
+* Axios
+
 ## Setup
 
 * npm install 
