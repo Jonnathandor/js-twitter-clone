@@ -5,7 +5,10 @@ const port = 3000
 const Twitter = require('./helpers/twitter');
 const twitter = new Twitter();
 
-
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+})
 
 app.get('/tweets', (req, res) => {
   
