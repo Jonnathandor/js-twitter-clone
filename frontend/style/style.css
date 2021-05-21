@@ -101,6 +101,7 @@ that is left after navigation will be splitted evenly between those two divs */
     height: 60px;
     width: 60px;
     background-color: white;
+    background-size: cover;
 }
 
 .tweet-user-name-container {
@@ -132,6 +133,19 @@ that is left after navigation will be splitted evenly between those two divs */
     background-repeat: no-repeat;
     flex-basis: 50%;
     flex-grow: 1;
+}
+
+.tweet-video-container {
+    margin: 20px;
+    height: 200px;
+    border: 1px solid #1c1c1c;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tweet-video-container video {
+    width: 100%;
+    height: 100%;
 }
 
 .tweet-text-container {
