@@ -6,7 +6,7 @@ body, html {
 
 .container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     background-color: #0F0F11;
 }
@@ -41,6 +41,7 @@ that is left after navigation will be splitted evenly between those two divs */
     flex-direction: column;
     /* flex-grow: 1; says: "Let me grow as much as I can" */
     flex: 1;
+    overflow: scroll;
 }
 
 .tweets-search-container {
@@ -74,6 +75,7 @@ that is left after navigation will be splitted evenly between those two divs */
 .tweets-list {
     height: 600px;
     margin: 20px;
+    max-width: 700px;
 }
 
 .tweet-container {
@@ -82,7 +84,7 @@ that is left after navigation will be splitted evenly between those two divs */
     margin: 10px;
     border: 1px solid #1c1c1c;
     border-radius: 20px;
-    overflow: hidden;
+
 }
 
 .tweet-user-info {
@@ -119,6 +121,17 @@ that is left after navigation will be splitted evenly between those two divs */
     height: 200px;
     border: 1px solid #1c1c1c;
     border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.tweet-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-basis: 50%;
+    flex-grow: 1;
 }
 
 .tweet-text-container {
@@ -147,7 +160,6 @@ that is left after navigation will be splitted evenly between those two divs */
     margin-top: 70px;
     border: 1px solid #979797;
     border-radius: 40px;
-    overflow: hidden;
 }
 
 .tweets-trending {
