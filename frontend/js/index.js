@@ -1,24 +1,31 @@
 const URL = "http://localhost:3000/tweets";
+let nextPageUrl = null;
 
 //Selectors
 const userSearch = document.getElementById('user-search-input');
 
 // Functions 
-
-const getTwitterData = (query) => {
+const getTwitterData = (query, nextPage) => {
     query = encodeURIComponent(query);
-    const fullURL = `${URL}?q=${query}&count=10`;
+    currentSearch = query;
+    let fullURL = `${URL}?q=${query}&count=10`;
+    if(nextPage && nextPageUrl){
+        fullURL = nextPageUrl;
+    }
     fetch(fullURL)
     .then(response => {
-        return response.json()
+        return response.json();
     }).then(data => {
-        buildTweets(data.statuses)
+        buildTweets(data.statuses, nextPage);
+        saveNextPage(data.search_metadata);
     })
 }
 
-const buildTweets = (tweets, nextPage) => {
+const buildTweets = (tweets, nextPage=false) => {
+    console.log(nextPage);
     let twitterContent = '';
     tweets.map(tweet => {
+        const createdDate = moment(tweet.created_at).fromNow();
         twitterContent += `
             <div class="tweet-container">
                 <div class="tweet-user-info">
@@ -46,13 +53,30 @@ const buildTweets = (tweets, nextPage) => {
                     ${tweet.full_text}
                 </div>
                 <div class="tweet-date-container">
-                    20 hours ago
+                    ${createdDate}
                 </div>
             </div>
         `;
     })
+
+    let nextPageSection = `
+    <div class="next-page-container" id="next-round">
+        <div id="next-page" onclick="onNextPage()">
+            <i id="next-round-inner" class="fas fa-arrow-down"></i>
+        </div>
+    </div>`;
     
-    document.querySelector('.tweets-list').innerHTML = twitterContent;
+    if(nextPage){
+        console.log('nextpage')
+        document.getElementById('next-round').remove();
+        document.querySelector('.tweets-list').insertAdjacentHTML('beforeend', twitterContent);
+        document.querySelector('.tweets-list').innerHTML += nextPageSection;
+    } else {
+        document.querySelector('.tweets-list').innerHTML = twitterContent;
+        document.querySelector('.tweets-list').innerHTML += nextPageSection;
+    }
+    
+   
 }
 
 const buildImages = (images) => {
@@ -98,8 +122,38 @@ const getVideoOptions = (mediaType) => {
     }
 }
 
+const selectTrend = (e) => {
+    const trendText = e.innerText;
+    getTwitterData(trendText);
+}
+
+const saveNextPage = (metadata) => {
+    if(metadata.next_results){
+        nextPageUrl = `${URL}${metadata.next_results}`;
+    } else {
+        nextPageUrl = null;
+    }
+}
+
+const onNextPage = () => {
+    if(nextPageUrl) {
+        console.log(nextPageUrl)
+        getTwitterData(currentSearch, true);
+    }
+}
 
 //Event listeners
 userSearch.addEventListener('keyup', () =>{
     getTwitterData(userSearch.value);
+})
+
+// just playing around with the event object
+document.getElementById('list').addEventListener('click',(e) => {
+    if(e.target.id === 'next-round' 
+    || e.target.id === 'next-round-inner'
+    || e.target.id === 'next-page'){
+
+    }
+
+    
 })

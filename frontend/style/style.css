@@ -205,3 +205,18 @@ that is left after navigation will be splitted evenly between those two divs */
     border-top: 1px solid #d8d8d8;
     cursor: pointer;
 }
+
+.next-page-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: #47525d;
+    border: 1px solid  #1c1c1c;
+    border-radius: 20px;
+    padding: 8px;
+    text-align: center;
+}
+
+.next-page-container:hover {
+    background-color: #1c1c1c;
+}
